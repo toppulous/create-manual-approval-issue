@@ -3,7 +3,7 @@ author: toppulous
 branding:
   color: purple
   icon: github
-description: Creates an issue that will be used for manual approvals between stages in a CI/CD pipeline. A new issue will not be created if one already exists for the given tag
+description: Creates an issue that will be used for manual approvals between stages in a CI/CD pipeline.
 inputs:
   label:
     description: The label to attach to the issue - should be unique per stage, and should not be used outside of CI/CD
