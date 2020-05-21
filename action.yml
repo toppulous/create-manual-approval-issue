@@ -1,0 +1,28 @@
+name: Create Manual Approval Issue
+author: toppulous
+branding:
+  color: purple
+  icon: github
+description: Creates an issue that will be used for manual approvals between stages in a CI/CD pipeline. A new issue will not be created if one already exists for the given tag
+inputs:
+  label:
+    description: The label to attach to the issue - should be unique per stage, and should not be used outside of CI/CD
+    required: true
+  title:
+    description: Title to assign the issue
+    default: '[Github Actions] Manual Approval Required'
+    required: false
+  body:
+    description: Body to assign to the issue
+    default: 'Closing this issue will approve all changes listed in comments to the next stage'
+    required: false
+  github-token:
+    description: The gitHub token used to create an authenticated client
+    default: ${{ github.token }}
+    required: false
+outputs:
+  id:
+    description: 'Id of the issue created (or found, if one already exists with the given label)'
+runs:
+  using: node12
+  main: index.js
