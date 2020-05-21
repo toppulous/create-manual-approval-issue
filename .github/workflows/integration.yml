@@ -18,8 +18,9 @@ jobs:
           label: dev-approval
       - if: ${{ steps.issue1.outputs.id }} != ${{ steps.issue2.outputs.id }}
         uses: actions/github-script@v1
-        run: |
-          throw 'Expected ids to be equal'
+        with:
+          script: |
+            throw 'Expected ids to be equal'
       - uses: peter-evans/close-issue@v1
         with:
           issue-number: ${{ steps.issue1.outputs.id }}
