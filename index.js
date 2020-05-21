@@ -44,4 +44,6 @@ async function run() {
   }
 }
 
+console.log('Starting...');
 run();
+console.log('Ending...');
