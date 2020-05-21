@@ -32,13 +32,13 @@ async function run() {
       console.log('created new issue:');
       console.log(issue);
 
-      core.setOutput('id', issue.id);
+      core.setOutput('issue-number', issue.number);
       return;
     } else if (issues.length > 1) {
       throw `Too many ${label} issues created - expect 0 or 1`
     }
 
-    return issues[0].number;
+    core.setOutput('issue-number', issues[0].number);
   } catch(error) {
     core.setFailed(error.message);
   }

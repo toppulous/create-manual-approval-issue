@@ -7,7 +7,7 @@ detailed once they are created
 
 This action will either create or find an issue to be used for manual approval in a CI/CD pipeline.
 
-For each stage that required a manual approval, you should define a unique label in your repository (e.g. `dev-approval`). This action will then either create or find an issue with that label, and return the id for it.
+For each stage that required a manual approval, you should define a unique label in your repository (e.g. `dev-approval`). This action will then either create or find an issue with that label, and return the number for it.
 
 ## Inputs
 ### label
@@ -26,5 +26,5 @@ listed in the comments to the next stage`
 pulled from the context within the action, this value should **not** be populated.
 
 ## Outputs
-### id
-The Id of the issue created, or found if an open one already existed with the given label
+### issue-number
+The number of the issue created, or found if an open one already existed with the given label

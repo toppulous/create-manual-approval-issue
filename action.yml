@@ -21,8 +21,8 @@ inputs:
     default: ${{ github.token }}
     required: false
 outputs:
-  id:
-    description: 'Id of the issue created (or found, if one already exists with the given label)'
+  issue-number:
+    description: 'Number of the issue created (or found, if one already exists with the given label)'
 runs:
   using: node12
   main: index.js
