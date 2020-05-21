@@ -7,6 +7,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create initial issue
-        id: issue-create-1
-        uses: toppulous/create-manual-approval-issue@v1
+        id: issue1
+        uses: toppulous/create-manual-approval-issue@master
+        with:
+          label: dev-approval
+      - name: Get initial issue
+        id: issue2
+        uses: toppulous/create-manual-apporval-issue@v1
+        with:
+          label: dev-approval
+      - if: ${{ steps.issue1.outputs.id }} != ${{ steps.issue2.outputs.id }}
+        uses: actions/github-script@v1
+        run: |
+          throw 'Expected ids to be equal'
+      - uses: peter-evans/close-issue@v1
+        with:
+          issue-number: ${{ steps.issue1.outputs.id }}
+          comment: Closing integration test issue
+
 
