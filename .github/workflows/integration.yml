@@ -12,15 +12,15 @@ jobs:
         with:
           label: dev-approval
       - run: |
-          echo 'First issue id ${{ steps.issue1.outputs.id }}'
+          echo 'First issue id ${{ steps.issue1.outputs.issue-number }}'
       - name: Get initial issue
         id: issue2
         uses: toppulous/create-manual-approval-issue@master
         with:
           label: dev-approval
       - run: |
-          echo 'Second issue id ${{ steps.issue2.outputs.id }}'
-      - if: ${{ steps.issue1.outputs.id }} != ${{ steps.issue2.outputs.id }}
+          echo 'Second issue id ${{ steps.issue2.outputs.issue-number }}'
+      - if: ${{ steps.issue1.outputs.issue-number }} != ${{ steps.issue2.outputs.issue-number }}
         uses: actions/github-script@v1
         with:
           script: |
