@@ -13,7 +13,7 @@ jobs:
           label: dev-approval
       - name: Get initial issue
         id: issue2
-        uses: toppulous/create-manual-apporval-issue@v1
+        uses: toppulous/create-manual-approval-issue@master
         with:
           label: dev-approval
       - if: ${{ steps.issue1.outputs.id }} != ${{ steps.issue2.outputs.id }}
