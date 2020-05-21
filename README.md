@@ -1,5 +1,7 @@
 # create-manual-approval-issue
 
+![.github/workflows/integration.yml](https://github.com/toppulous/create-manual-approval-issue/workflows/.github/workflows/integration.yml/badge.svg)
+
 This is one action in a series of actions - other actions and how to use them in tandem will be
 detailed once they are created
 

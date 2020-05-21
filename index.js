@@ -7,6 +7,7 @@ async function run() {
     const token = core.getInput('github-token');
     const title = core.getInput('title');
     const body = core.getInput('body');
+    console.log(`Creating issue with label ${label}...`);
 
     const octokit = new github.GitHub(token);
 
@@ -18,6 +19,8 @@ async function run() {
     });
 
     const issues = await octokit.paginate(opts);
+    console.log('Found open issues with tag:');
+    console.log(issues);
     if (issues == null || issues.length == 0) {
       const { data: issue } = await octokit.issues.create({
         owner: github.context.repo.owner,
@@ -26,6 +29,8 @@ async function run() {
         title: title,
         body: body
       })
+      console.log('created new issue:');
+      console.log(issue);
 
       core.setOutput('id', issue.id);
       return;
