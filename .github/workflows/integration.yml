@@ -27,7 +27,7 @@ jobs:
             throw 'Expected ids to be equal'
       - uses: peter-evans/close-issue@v1
         with:
-          issue-number: ${{ steps.issue1.outputs.id }}
+          issue-number: ${{ steps.issue1.outputs.issue-number }}
           comment: Closing integration test issue
 
 
