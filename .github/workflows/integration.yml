@@ -1,0 +1,12 @@
+on:
+  push:
+    branches: master
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create initial issue
+        id: issue-create-1
+        uses: toppulous/create-manual-approval-issue@v1
+

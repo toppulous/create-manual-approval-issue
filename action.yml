@@ -2,7 +2,7 @@ name: Create Manual Approval Issue
 author: toppulous
 branding:
   color: purple
-  icon: github
+  icon: check-circle
 description: Creates an issue that will be used for manual approvals between stages in a CI/CD pipeline.
 inputs:
   label:
