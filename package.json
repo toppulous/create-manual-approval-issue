@@ -19,6 +19,6 @@
   "homepage": "https://github.com/toppulous/create-manual-approval-issue#readme",
   "dependencies": {
     "@actions/core": "^1.9.1",
-    "@actions/github": "^2.2.0"
+    "@actions/github": "^5.1.1"
   }
 }
